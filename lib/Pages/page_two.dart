@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login/data.dart';
-import 'package:login/gen/assets.gen.dart';
+import 'package:login/model/data.dart';
 
 class PageTwo extends StatelessWidget {
   const PageTwo({Key? key}) : super(key: key);
@@ -10,7 +9,7 @@ class PageTwo extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       child: Column(
         children: [
           Padding(
@@ -108,7 +107,7 @@ class PageTwo extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(2000),
                                     image: DecorationImage(
                                       image:
-                                          NetworkImage(DataList[index].profile),
+                                          NetworkImage(dataList[index].profile),
                                       fit: BoxFit.cover,
                                     )),
                               ),
@@ -117,7 +116,7 @@ class PageTwo extends StatelessWidget {
                             const SizedBox(height: 20),
                             ElevatedButton(
                               onPressed: () {},
-                              child: Text("Follow"),
+                              child: const Text("Follow"),
                             )
                           ],
                         ),

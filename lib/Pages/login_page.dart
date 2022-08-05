@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({
     Key? key,
-    required this.InstagramId,
+    required this.instagramId,
   }) : super(key: key);
 
-  final TextEditingController InstagramId;
+  final TextEditingController instagramId;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                controller: InstagramId,
+                controller: instagramId,
                 textDirection: TextDirection.ltr,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -77,7 +77,7 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                controller: InstagramId,
+                controller: instagramId,
                 textDirection: TextDirection.ltr,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(

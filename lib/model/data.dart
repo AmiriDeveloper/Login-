@@ -6,7 +6,7 @@ class Data {
   Data({required this.profile, required this.name, required this.chat});
 }
 
-List<Data> DataList = [
+List<Data> dataList = [
   Data(
       profile:
           "https://italentt.com/wp-content/uploads/2016/08/modelo-karla-guzman-6.jpg",

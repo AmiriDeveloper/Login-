@@ -1,15 +1,17 @@
 import 'package:login/main.dart';
 import 'package:flutter/material.dart';
 
-class screen extends StatefulWidget {
+class Screen extends StatefulWidget {
+  const Screen({Key? key}) : super(key: key);
+
   @override
-  State<screen> createState() => _screenState();
+  State<Screen> createState() => _ScreenState();
 }
 
-class _screenState extends State<screen> {
+class _ScreenState extends State<Screen> {
   @override
   Future initState() async {
-    Future.delayed(Duration(seconds: 10)).then((value) {
+    Future.delayed(const Duration(seconds: 10)).then((value) {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => MyApp()));
     });
@@ -29,7 +31,7 @@ class _screenState extends State<screen> {
               color: Colors.blue,
               height: 32,
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             )
           ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login/home_page.dart';
-import 'login_page.dart';
+import 'package:login/screen/home_screen.dart';
+import 'package:login/screen/profile_screen.dart';
 
 void main() {
   runApp(
@@ -9,8 +9,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // ignore: non_constant_identifier_names
-  TextEditingController InstagramId = TextEditingController();
+  TextEditingController instagramId = TextEditingController();
+
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: HomePage(),
+        body: ProfileScreen(),
+        // HomePage(),
         //LoginPage(InstagramId: InstagramId),
       ),
     );
