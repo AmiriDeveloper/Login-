@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login/model/colors.dart';
+import 'package:login/screen/home_screen.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({
@@ -10,27 +12,47 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                Padding(
-                  padding: EdgeInsets.only(bottom: 60),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.white10,
-                    radius: 50.0,
-                    child: Icon(
-                      Icons.person_sharp,
-                      size: 90,
+            SizedBox(
+              height: size.height / 2.7,
+              child: Stack(children: [
+                Container(
+                  height: 200,
+                  decoration: const BoxDecoration(
+                      color: blueColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(120),
+                        bottomRight: Radius.circular(120),
+                      )),
+                ),
+                Positioned(
+                  bottom: 0,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: size.width / 2.5,
+                    ),
+                    child: Container(
+                      height: 110,
+                      width: 110,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.person_sharp,
+                        size: 90,
+                      ),
                     ),
                   ),
                 ),
-              ],
+              ]),
             ),
             const Text(
               'Welcome!',
@@ -93,40 +115,12 @@ class LoginPage extends StatelessWidget {
                         const Icon(Icons.password, color: Colors.black)),
               ),
             ),
-            ElevatedButton(onPressed: () {}, child: const Text('Sign In'))
-
-            /* Card(
-              margin: EdgeInsets.all(10.0),
-              child: ListTile(
-                leading: Icon(
-                  Icons.phone,
-                  color: Colors.cyan[700],
-                ),
-                title: Text(
-                  '+43 234 567 89',
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              margin: EdgeInsets.all(10.0),
-              child: ListTile(
-                leading: Icon(
-                  Icons.email,
-                  color: Colors.cyan[700],
-                ),
-                title: Text(
-                  'ammar@email.com',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.black87,
-                  ),
-                ),
-              ),
-            ),*/
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const HomePage()));
+                },
+                child: const Text('Sign In'))
           ],
         ),
       ),
