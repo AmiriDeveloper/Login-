@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:login/screen/home_screen.dart';
 import 'package:login/screen/profile_screen.dart';
 
+import 'Pages/login_page.dart';
+
 void main() {
   runApp(
     MyApp(),
@@ -18,11 +20,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
-        body: ProfileScreen(),
-        // HomePage(),
-        //LoginPage(InstagramId: InstagramId),
-      ),
+          backgroundColor: Colors.white,
+          body: //ProfileScreen(),
+              // HomePage(),
+              LoginPage(
+            instagramId: instagramId,
+          )),
     );
   }
 }
